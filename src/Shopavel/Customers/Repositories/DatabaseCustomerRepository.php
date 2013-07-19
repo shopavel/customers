@@ -2,9 +2,14 @@
 
 class DatabaseCustomerRepository implements CustomerRepositoryInterface {
 
+    public function __construct(DatabaseConnection $db)
+    {
+        $this->db = $db;
+    }
+
     public function findByEmail($email)
     {
-        return $this->app['db']->selectOne("SELECT id FROM customers WHERE email = ?", array($email));
+        return $this->db->selectOne("SELECT id FROM customers WHERE email = ?", array($email));
     }
 
 }
