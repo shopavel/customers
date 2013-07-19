@@ -1,6 +1,6 @@
 <?php namespace Shopavel\Customers;
 
-class CustomerRegistrationProcessor {
+class CustomerLoginProcessor {
 
     public function process(CustomerInterface $customer)
     {

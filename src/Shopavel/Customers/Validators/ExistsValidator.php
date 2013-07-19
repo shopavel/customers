@@ -1,13 +1,12 @@
 <?php namespace Shopavel\Customers\Validators;
 
 use Shopavel\Customers\CustomerInterface;
-use Shopavel\Customers\Repositories\CustomerRepositoryInterface;
 
-class ExistsValidator implements CustomerValidatorInterface {
+class ExistsValidator extends RepositoryValidator implements CustomerValidatorInterface {
 
-    public function validate(CustomerRepositoryInterface $repository, CustomerInterface $customer)
+    public function validate(CustomerInterface $customer)
     {
-        if ($repository->findByEmail($customer->email))
+        if ($this->repository->findByEmail($customer->email))
         {
             throw new \Exception("A customer already exists with this email address");
         }
