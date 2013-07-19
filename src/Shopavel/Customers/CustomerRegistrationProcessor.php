@@ -1,25 +1,21 @@
 <?php namespace Shopavel\Customers;
 
-use Illuminate\Container\Container;
+use Shopavel\Customers\Repositories\CustomerRepositoryInterface;
 
 class CustomerRegistrationProcessor {
 
-    protected $app;
-
-    public function process(Container $app, CustomerInterface $customer)
-    {
-        $this->app = $app;
-        
-        $this->validate($customer);
+    public function process(CustomerRepositoryInterface $repository, CustomerInterface $customer)
+    {        
+        $this->validate($repository, $customer);
 
         $customer->save();
     }
 
-    public function validate(CustomerInterface $customer)
+    public function validate(CustomerRepositoryInterface $repository, CustomerInterface $customer)
     {
         foreach ($this->validators as $validator)
         {
-            $validator->validate($this->app, $customer);
+            $validator->validate($repository, $customer);
         }
     }
 
