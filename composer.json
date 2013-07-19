@@ -1,0 +1,30 @@
+{
+    "name": "shopavel/customers",
+    "description": "Customers package for Shopavel",
+    "authors": [
+        {
+            "name": "Laurence Roberts",
+            "email": "lsjroberts@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shopavel/orders"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "~4"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "shopavel/orders": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Shopavel\\Customers": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
