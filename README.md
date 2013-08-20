@@ -1,6 +1,14 @@
 Customers package for Shopavel
 ==============================
 
+Usage
+-----
+
+```php
+$basket = Customer::basket();
+```
+
+
 License
 -------
 

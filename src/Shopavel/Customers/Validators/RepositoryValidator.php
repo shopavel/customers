@@ -4,11 +4,21 @@ use Shopavel\Customers\Repositories\CustomerRepositoryInterface;
 
 class RepositoryValidator {
 
-    public $repository;
+    /**
+     * Customers repository
+     * 
+     * @var CustomerRepositoryInterface
+     */
+    public $customers;
 
-    public function __construct(CustomerRepositoryInterface $repository)
+    /**
+     * Constructor
+     * 
+     * @param CustomerRepositoryInterface $customers
+     */
+    public function __construct(CustomerRepositoryInterface $customers)
     {
-        $this->repository = $repository;
+        $this->customers = $customers;
     }
 
 }

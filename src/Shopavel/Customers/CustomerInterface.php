@@ -5,8 +5,7 @@ use Shopavel\Orders\OrderInterface;
 interface CustomerInterface {
 
     public function orders();
-    public function getOrder();
-    public function setOrder(OrderInterface $order);
-    public function addOrder(OrderInterface $order);
+    public function basket();
+    public function save();
 
 }
