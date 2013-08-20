@@ -5,16 +5,26 @@ use Shopavel\Customers\CustomerInterface;
 
 class AuthTransaction extends Transaction {
 
-    public function login(CustomerInterface $customer)
+    public function authenticate($email, $password)
     {
-        $this->validate($customer);
+        $user = $this->app['sentry']->authenticate(array(
+            'login' => $email,
+            'password' => $password
+        ));
 
-        // store in session
+        if (! $user->inGroup('customers'))
+        {
+            throw new UserNotFoundException("The user was not found in the group 'customers'");
+        }
+
+        $customer = Customer::where('user_id', '=', $user->id)->take(1)->get();
+
+        return $customer;
     }
 
     public function logout(CustomerInterface $customer)
     {
-        // delete session
+        $this->app['sentry']->logout();
     }
 
 }

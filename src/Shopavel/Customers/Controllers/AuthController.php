@@ -7,24 +7,14 @@ class AuthController extends Controller {
 
     public function login()
     {
-        $user = $this->app['sentry']->authenticate(array(
-            'login' => $email,
-            'password' => $password
-        ));
-
-        if (! $user->inGroup('customers'))
-        {
-            throw new UserNotFoundException("The user was not found in the group 'customers'");
-        }
-
-        $customer = Customer::where('user_id', '=', $user->id)->take(1)->get();
+        $customer = $this->app['shopavel.customer.auth']->authenticate(Input::get('email'), Input::get('password'));
 
         return $this->redirect()->route('shopavel.customers.dashboard', array('customerID' => $customer->id));
     }
 
     public function logout()
     {
-        $this->app['sentry']->logout();
+        $this->app['shopavel.customer.auth']->logout();
     }
 
 }
