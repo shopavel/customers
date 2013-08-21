@@ -16,6 +16,22 @@ In `app/config/app.php` add `'Shopavel\Customers\CustomersServiceProvider'` to y
 Usage
 -----
 
+### Customer
+
+You can use the `Customer` alias to access the customer eloquent model.
+
+**Basket**
+
+```php
+$basket = Customer::find(1)->getBasket();
+```
+
+**Orders**
+
+```php
+$orders = Customer::find(1)->getOrders();
+```
+
 ### Registration
 
 Use the `customer.registration` service to register customers.
