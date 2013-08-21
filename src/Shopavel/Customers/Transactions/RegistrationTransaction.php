@@ -3,13 +3,20 @@
 use Shopavel\Transactions\Transaction;
 use Shopavel\Customers\CustomerInterface;
 
+/**
+ * Customer registration transactions.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class RegistrationTransaction extends Transaction {
 
-    public function login(CustomerInterface $customer)
+    public function register(CustomerInterface $customer)
     {
         $this->validate($customer);
 
         $customer->save();
+
+        return $customer;
     }
 
 }

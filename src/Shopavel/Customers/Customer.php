@@ -4,6 +4,11 @@ use Shopavel\Users\User;
 use Shopavel\Users\UserInterface;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Customer model.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class Customer extends Model implements CustomerInterface, UserInterface {
 
     /**

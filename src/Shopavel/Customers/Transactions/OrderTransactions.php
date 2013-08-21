@@ -3,6 +3,11 @@
 use Shopavel\Transactions\Transaction;
 use Shopavel\Customers\CustomerInterface;
 
+/**
+ * Customer order transactions.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class OrderTransactions extends Transaction {
 
     public function addOrder(CustomerInterface $customer, OrderInterface $order)

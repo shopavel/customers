@@ -3,6 +3,11 @@
 use Shopavel\Controllers\Controller;
 use Cartalyst\Sentry\Users\UserNotFoundException;
 
+/**
+ * Controller for handling customers authorisation requests.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class AuthController extends Controller {
 
     public function login()

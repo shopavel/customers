@@ -3,6 +3,11 @@
 use Shopavel\Transactions\Transaction;
 use Shopavel\Customers\CustomerInterface;
 
+/**
+ * Customer authorisation transactions.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class AuthTransaction extends Transaction {
 
     public function authenticate($email, $password)

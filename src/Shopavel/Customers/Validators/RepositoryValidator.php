@@ -2,6 +2,11 @@
 
 use Shopavel\Customers\Repositories\CustomerRepositoryInterface;
 
+/**
+ * Parent repository validator.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class RepositoryValidator {
 
     /**

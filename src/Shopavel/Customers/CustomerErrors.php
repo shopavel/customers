@@ -1,7 +1,7 @@
 <?php namespace Shopavel\Customers;
 
 /**
- * Customer errors containers.
+ * Customer errors container.
  *
  * @author  Laurence Roberts <lsjroberts@gmail.com>
  */

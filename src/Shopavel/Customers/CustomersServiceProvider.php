@@ -2,6 +2,11 @@
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Customers service provider.
+ *
+ * @author  Laurence Roberts <lsjroberts@gmail.com>
+ */
 class CustomersServiceProvider extends ServiceProvider {
 
     /**
