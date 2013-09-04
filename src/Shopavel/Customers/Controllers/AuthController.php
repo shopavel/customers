@@ -20,6 +20,8 @@ class AuthController extends Controller {
     public function logout()
     {
         $this->app['shopavel.customer.auth']->logout();
+
+        return $this->redirect()->route('shopavel.index');
     }
 
 }

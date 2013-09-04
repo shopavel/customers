@@ -6,6 +6,8 @@ Installation
 
 Add `"shopavel/customers": "1.0.*"` to your `composer.json` and run `composer update`.
 
+This package is required by `shopavel/shop`, you will not normally have to specifically require this package.
+
 
 Configuration
 -------------

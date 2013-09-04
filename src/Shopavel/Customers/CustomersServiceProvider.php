@@ -25,9 +25,17 @@ class CustomersServiceProvider extends ServiceProvider {
     {
         $this->package('shopavel/customers');
 
+        $this->app->bind('Shopavel\Customers\Repositories\CustomerRepositoryInterface',
+            'Shopavel\Customers\Repositories\CapsuleCustomerRepository');
+
         $this->app['customer'] = $this->app->share(function($app)
         {
-            return null;
+            return new Customer;
+        });
+
+        $this->app['customer.registration'] = $this->app->share(function($app)
+        {
+            return new Transactions\RegistrationTransaction();
         });
 
         $this->app['customer.auth'] = $this->app->share(function($app)
